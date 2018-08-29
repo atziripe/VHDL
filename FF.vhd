@@ -37,6 +37,8 @@ BEGIN
 				QSR <= '1';
 				--NQSR <= '0';
 	--***FALTA ESTADO NO VALIDO***
+--ES NECESARIO Q NEGADA?	      
+			    
 			END IF;
 		END IF;
 	END FlipFlopSR;
