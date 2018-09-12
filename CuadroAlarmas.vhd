@@ -7,6 +7,28 @@ PORT(
     DISPLAY1:OUT STD_LOGIC_VECTOR(0 TO 6);
 	Z1:INOUT STD_LOGIC_VECTOR(0 TO 1)
 );
+ATTRIBUTE PIN_NUMBERS OF ABCD : ENTITY IS
+        "Display1(0):18 "   &   
+        "Display1(1):21 "   &   
+        "Display1(2):20 "   &   
+        "Display1(3):17 "   &   
+        "Display1(4):16 "   &   
+        "Display1(5):22 "   &   
+        "Display1(6):15 "   & 
+        "Z1(0):23"          &   
+	"Z1(1):14 "          & 
+	"A(0):13 "          & 
+        "A(1):11 "          &   
+        "B(0):10 "          &   
+        "B(1):9 "          &
+        "C(0):8 "          &   
+        "C(1):7 "          &   
+	"D(0):6 "          &   
+        "D(1):5 "          &
+        "REF(0):4 "  &   
+        "REF(1):3 "  &   
+        "SEL(0):2 " &   
+        "SEL(1):1"; 
 END ABCD;
 
 ARCHITECTURE A_ABCD OF ABCD IS
