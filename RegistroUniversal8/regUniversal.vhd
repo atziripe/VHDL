@@ -1,5 +1,5 @@
 LIBRARY IEEE;
-USE IEEE.STD_LOGIC.1164.ALL;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY RU8 IS
 PORT(
@@ -17,22 +17,22 @@ ARCHITECTURE A_RU8 OF RU8 IS
 	PROCESS(CLK, CLR)
 	BEGIN
 		IF(CLR = '0') THEN
-			Q <= "000";
+			Q <= "00000000";
 		ELSIF(CLK'EVENT AND CLK='1') THEN
 			CASE C IS
 				WHEN "00" => Q <= DATO;
 				WHEN "01" => Q <= Q;
 				WHEN "10" =>
-							 CICLO1: FOR I TO 7 DOWNTO 0 LOOP
-								IF(I='7') THEN
+							 CICLO1: FOR I IN 7 DOWNTO 0 LOOP
+								IF(I=7) THEN
 									Q(I) <= CD;
 								ELSE
 									Q(I) <= Q(I+1);
 								END IF;
 							 END LOOP;
 				WHEN OTHERS =>
-							 CICLO2: FOR I TO 7 DOWNTO 0 LOOP
-								IF(I='0') THEN
+							 CICLO2: FOR I IN 7 DOWNTO 0 LOOP
+								IF(I=0) THEN
 									Q(I) <= CI;
 								ELSE
 									Q(I) <= Q(I-1);
